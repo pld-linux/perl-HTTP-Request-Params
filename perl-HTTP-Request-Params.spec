@@ -1,13 +1,13 @@
 #
 # Conditional build:
 %bcond_without	autodeps	# don't BR packages needed only for resolving deps
-%bcond_without	tests	# do not perform "make test"
+%bcond_without	tests		# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	HTTP
 %define		pnam	Request-Params
 Summary:	Retrieve GET/POST Parameters from HTTP Requests
-Summary(pl):	Odczytuje parametry GET/POST z zapytañ HTTP
+Summary(pl):	Odczytywanie parametrów GET/POST z zapytañ HTTP
 Name:		perl-%{pdir}-%{pnam}
 Version:	1.01
 Release:	1
@@ -15,6 +15,7 @@ License:	same as Perl
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	fccd255a2992c77b5c40cb5e1e75b256
+URL:		http://search.cpan.org/dist/HTTP-Request-Params/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with autodeps} || %{with tests}
@@ -25,8 +26,6 @@ BuildRequires:	perl-Email-MIME-Modifier >= 1.42
 %endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_noautoreq	'perl(anything_fake_or_conditional)'
 
 %description
 This software does all the dirty work of parsing HTTP Requests to find
@@ -40,7 +39,6 @@ znalezienia parametrów.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-# Don't use pipes here: they generally don't work. Apply a patch.
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
 
@@ -60,5 +58,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes README
-%{perl_vendorlib}/*
+%{perl_vendorlib}/HTTP/Request/Params.pm
 %{_mandir}/man3/*
