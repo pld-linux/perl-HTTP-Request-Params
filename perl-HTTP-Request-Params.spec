@@ -7,7 +7,7 @@
 %define		pdir	HTTP
 %define		pnam	Request-Params
 Summary:	Retrieve GET/POST Parameters from HTTP Requests
-Summary(pl):	Odczytywanie parametrów GET/POST z zapytañ HTTP
+Summary(pl.UTF-8):   Odczytywanie parametrÃ³w GET/POST z zapytaÅ„ HTTP
 Name:		perl-%{pdir}-%{pnam}
 Version:	1.01
 Release:	1
@@ -31,9 +31,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This software does all the dirty work of parsing HTTP Requests to find
 incoming query parameters.
 
-%description -l pl
-Biblioteka wykonuj±ca brudn± robotê z parsowaniem zapytañ HTTP w celu
-znalezienia parametrów.
+%description -l pl.UTF-8
+Biblioteka wykonujÄ…ca brudnÄ… robotÄ™ z parsowaniem zapytaÅ„ HTTP w celu
+znalezienia parametrÃ³w.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
