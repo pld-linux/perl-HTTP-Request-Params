@@ -7,7 +7,7 @@
 %define		pdir	HTTP
 %define		pnam	Request-Params
 Summary:	Retrieve GET/POST Parameters from HTTP Requests
-Summary(pl.UTF-8):   Odczytywanie parametrów GET/POST z zapytań HTTP
+Summary(pl.UTF-8):	Odczytywanie parametrów GET/POST z zapytań HTTP
 Name:		perl-%{pdir}-%{pnam}
 Version:	1.01
 Release:	1
