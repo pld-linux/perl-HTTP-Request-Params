@@ -10,7 +10,7 @@ Summary:	Retrieve GET/POST Parameters from HTTP Requests
 Summary(pl.UTF-8):	Odczytywanie parametrów GET/POST z zapytań HTTP
 Name:		perl-%{pdir}-%{pnam}
 Version:	1.01
-Release:	1
+Release:	2
 License:	same as Perl
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
